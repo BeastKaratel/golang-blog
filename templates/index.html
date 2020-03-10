@@ -1,0 +1,21 @@
+{{ define "index" }}
+
+{{ template "header" }}
+
+{{ range $key, $value := .}}
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <input type="hidden" name="id" id="id">
+          <div class="modal-title">
+			  <p><h3><a href="/edit?id={{$key}}">{{ $value.Title }}</a></h3></p>
+          </div>
+        </div>
+        <div class="modal-body">
+			<p>Content</p>
+          {{ $value.Content }}
+        </div>
+      </div>
+    </div>
+{{ end }}
+{{ end }}
